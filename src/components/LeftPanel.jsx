@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import '../css/LeftPanel.css'
-import SliderFilter from './Filters/sliderFilter'
+import SliderFilter from './Filters/SliderFilter'
 import { Button} from '@mui/material'
 import SelectFilter from './Filters/SelectFilter'
 import { DataContext } from '../context/DataContext'
