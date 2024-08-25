@@ -1,0 +1,19 @@
+.leftpanel{
+    position: sticky;
+    top: 110px;
+    height: 81vh;
+    max-width: 250px;
+    min-width: 250px;
+margin-right: 20px;
+}
+.filters::-webkit-scrollbar {
+   width: 1px;
+}
+
+.filters::-webkit-scrollbar-track {
+   background-color: rgb(12, 12, 12);
+}
+
+.filters::-webkit-scrollbar-thumb {
+   background-color: rgb(42, 42, 42);
+}
