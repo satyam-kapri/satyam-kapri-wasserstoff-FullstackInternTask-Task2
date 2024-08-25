@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Slider from '@mui/material/Slider';
 function SliderFilter({filters,filtername,setFilters,reset,setReset}) {
-  if(!filters)return;
+ 
 
   const minDistance = 1;
   const [value1, setValue1] = React.useState([2007, 2051]);
