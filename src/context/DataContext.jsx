@@ -14,7 +14,7 @@ function DataProvider({ children }) {
   useEffect(()=>{
     
     async function fetch(){
-      const res=await axios.get('https://satyam-kapri-wasserstoff.onrender.com/getjsondata');//fetching json data
+      const res=await axios.get('https://satyam-kapri-wasserstoff-fullstack-intern-task-task2-obgf.vercel.app/getjsondata');//fetching json data
       setData(res.data);
       setOriginalData(res.data);
 
