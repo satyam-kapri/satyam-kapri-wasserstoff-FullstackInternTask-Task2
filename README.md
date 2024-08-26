@@ -2,8 +2,7 @@ Following are screenshots of the live project:
 ![Screenshot (100)](https://github.com/user-attachments/assets/15609f36-3e41-40f1-93fd-158b4add5be3)
 ![Screenshot (102)](https://github.com/user-attachments/assets/374616e2-6cdf-423e-abb3-a2d5e6a43eb1)
 
-### Heading 3
-**This is task No. 2 , that is Visualisation Dashboard**
+### This is task No. 2 , that is Visualisation Dashboard
 
 I have made this project using following dependencies:
 1. React.js
@@ -17,8 +16,7 @@ I have made this project using following dependencies:
    
 Frontend is hosted on Vercel and Backend on Render.com
 
-### Heading 3
-**Approach to the problem and Solution Strategy:**
+### Approach to the problem and Solution Strategy:
 
 I chose the second task, which was to create a visualization dashboard, specifically because of its complexity. My approach to solving the task began with understanding the data in more depth using Python's Pandas library. This analysis provided valuable insights that helped me determine the types of charts that would be most effective for representing the data.
 
