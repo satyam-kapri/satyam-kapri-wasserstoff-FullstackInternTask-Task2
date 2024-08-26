@@ -51,7 +51,7 @@ function MapChart() {
 
 return (
   
-      <div class="mapchart relative w-full  p-4 md:p-8 flex flex-col justify-between bg-base rounded-lg  highlight-white" style={{zIndex:-1}}>
+      <div class="mapchart relative w-full  p-4 md:p-8 flex flex-col justify-between bg-base rounded-lg  highlight-white" >
         <div className='z-10 flex items-center p-0.5 px-4 pl-1 rounded-full bg-base-lighter highlight-white w-min'>
         <p className='w-max flex items-center'>
                       <span  onClick={()=>{setShowDropdown(!showDropdown);}} className='text-light-orange flex items-center justify-between rounded-xl cursor-pointer px-2' style={{background:'rgb(155 152 127 / 14%)'}}>{item1}
