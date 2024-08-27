@@ -8,23 +8,12 @@ const app = express();
 app.use(cors());
 const port = process.env.PORT || 3000;
 
-let isConnected;
-
 const connectToDatabase = async () => {
-  if (isConnected) {
-    return;
-  }
-  try {
-    const uri = process.env.MONGODB_URI;
-    const connection = await mongoose.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    isConnected = connection.connections[0].readyState;
-    console.log('Connected to MongoDB Atlas');
-  } catch (err) {
-    console.error('MongoDB connection error:', err);
-    throw err;
+  if (!mongoose.connection.readyState) {
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log('New MongoDB connection established');
+  } else {
+    console.log('Using existing MongoDB connection');
   }
 };
 
@@ -35,6 +24,10 @@ app.get('/getjsondata', async (req, res) => {
     const db = mongoose.connection.db;
     const collection = db.collection('JsonData');
     const documents = await collection.find({}, { projection: { _id: 0 } }).toArray(); // Get all documents
+    if (documents.length === 0) {
+      console.log('No documents found');
+      return res.status(200).json([]);
+    }
     res.status(200).json(documents);
   } catch (err) {
     res.status(500).json({ message: 'Error fetching documents', error: err.message });
