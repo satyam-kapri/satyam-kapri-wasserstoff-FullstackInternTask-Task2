@@ -22,6 +22,7 @@ app.get('/getjsondata', async (req, res) => {
   try {
     await connectToDatabase();
     const db = mongoose.connection.db;
+    console.log(db);
     const collection = db.collection('JsonData');
     const documents = await collection.find({}).toArray(); // Get all documents
     const sanitizedDocuments = documents.map(({ _id, ...rest }) => rest);
