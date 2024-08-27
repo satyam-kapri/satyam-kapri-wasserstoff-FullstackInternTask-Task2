@@ -23,12 +23,13 @@ app.get('/getjsondata', async (req, res) => {
     await connectToDatabase();
     const db = mongoose.connection.db;
     const collection = db.collection('JsonData');
-    const documents = await collection.find({}, { projection: { _id: 0 } }).toArray(); // Get all documents
+    const documents = await collection.find({}).toArray(); // Get all documents
+    const sanitizedDocuments = documents.map(({ _id, ...rest }) => rest);
     if (documents.length === 0) {
       console.log('No documents found');
       return res.status(200).json([]);
     }
-    res.status(200).json(documents);
+    res.status(200).json(sanitizedDocuments);
   } catch (err) {
     res.status(500).json({ message: 'Error fetching documents', error: err.message });
   }
